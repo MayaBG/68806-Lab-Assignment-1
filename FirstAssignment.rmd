@@ -1,0 +1,32 @@
+---
+title: "First assignment"
+author: "Maya"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Summarizing the first assignment in the course
+
+In this assignment I created the R project "EcoHydrologywithR"
+And also imported an csv file with meteorological data.
+
+I than created and R script called "simple.R"
+which reads the data from the file and plots some of it.
+
+
+```{r simple, include=TRUE}
+# simple file to read, analyze and plot
+
+# First we read a set of meteorological observations.
+# The file is constructed of a date, hour (24 observation per day, 3 days), temperature and humidity
+meteo = read.csv('meteo data.csv',header=T)
+
+
+# plot data
+plot(meteo$hour,meteo$temp,type="p",col="blue",main = "Temperture through the day",xlab = "Hour", ylab = "Temp [C]")
+
+```
+

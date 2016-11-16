@@ -13,23 +13,25 @@ knitr::opts_chunk$set(echo = TRUE)
 In this assignment I created the R project "HomeAssignment"
 And also imported an csv file with meteorological data.
 
-I than created and R script called "simple.R"
-which reads the data from the file and plots some of it.
+I than created an R fuction called "TD_calc.R"
+which calculated the dew point temperature vased on temperature and humidty data.
+
+I than read the data from the meteo data file and, used the fuction to calculate the TD and plot the new information.
 
 
-```{r simple, include=TRUE}
-# simple file to read, analyze and plot
+```{r TD_calc, include=TRUE}
+# simple function to read, analyze and plot
 
 # First we read a set of meteorological observations.
-# The file is constructed of a date, hour (24 observation per day, 3 days), temperature and humidity
+# The data file is constructed of a date, hour (24 observation per day, 3 days), temperature and humidity
+source('~/R/HomeAssignment/simple.R')
 meteo = read.csv('meteo data.csv',header=T)
 
+# now we can calculate it for the whole set of data
+output = TD_calc(hum=meteo$hum, temp=meteo$temp)
 
-# plot data
-plot(meteo$hour,meteo$temp,type="p",col="red",main = "Temperture through the day",xlab = "Hour", ylab = "Temp [C]")
-
-# plotting a second graph
-plot(meteo$hour,meteo$hum,type = "p",col="blue",main = "Humidity through the day",xlab = "Hour", ylab = "RH [%]")
-
+# and than plot
+plot(output, col = "blue", main = "Dew point temperature calculated for all times", xlab = "time", ylab = "Dew point Temp [C]")
 ```
 
+Now I also documented the function to create a help file.

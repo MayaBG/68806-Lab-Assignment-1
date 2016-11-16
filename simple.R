@@ -1,8 +1,5 @@
+# 
 # simple file to read, analyze and plot
-
-# First we read a set of meteorological observations.
-# The file is constructed of a date, hour (24 observation per day, 3 days), temperature and humidity
-meteo = read.csv('meteo data.csv',header=T)
 
 
 # plot data

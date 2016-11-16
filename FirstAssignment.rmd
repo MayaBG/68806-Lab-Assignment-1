@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Summarizing the first assignment in the course
 
-In this assignment I created the R project "EcoHydrologywithR"
+In this assignment I created the R project "HomeAssignment"
 And also imported an csv file with meteorological data.
 
 I than created and R script called "simple.R"

@@ -7,7 +7,8 @@
 #' @param        temp    (deg C) air temperature
 #' @param        hum    (%) Relitive Humidity
 #' @return       TD     (deg C) dew-point temperature  
-#' 
+
+ 
 TD_calc = function(hum, temp){
   
   TD = 243.04*(log(hum/100)+((17.625*temp)/(243.04+temp)))/(17.625-log(hum/100)-((17.625*temp)/(243.04+temp)))   
